@@ -6,4 +6,7 @@ from frappe.model.document import Document
 
 
 class FlightPassenger(Document):
-	pass
+	
+	# Implement the before_save controller hook 
+	def before_save(self):
+		self.full_name = f"{self.first_name} {self.last_name}"	

@@ -9,23 +9,27 @@
   "ticket_details_section",
   "passenger",
   "source_airport",
-  "destination_airport",
   "source_airport_code",
+  "destination_airport",
   "destination_airport_code",
   "flight",
-  "departure_details_section",
+  "column_break_cxez",
   "departure_date",
   "departure_time",
   "duration_of_flight",
-  "column_break_yyzv",
   "status",
-  "amended_from"
+  "amended_from",
+  "section_break_lmfx",
+  "flight_price",
+  "column_break_fqyx",
+  "total_amount",
+  "section_break_cxqt",
+  "add_ons"
  ],
  "fields": [
   {
    "fieldname": "ticket_details_section",
-   "fieldtype": "Section Break",
-   "label": "Ticket Details"
+   "fieldtype": "Section Break"
   },
   {
    "fieldname": "passenger",
@@ -93,15 +97,6 @@
    "reqd": 1
   },
   {
-   "fieldname": "departure_details_section",
-   "fieldtype": "Section Break",
-   "label": "Departure Details"
-  },
-  {
-   "fieldname": "column_break_yyzv",
-   "fieldtype": "Column Break"
-  },
-  {
    "default": "Booked",
    "fieldname": "status",
    "fieldtype": "Select",
@@ -118,12 +113,46 @@
    "print_hide": 1,
    "read_only": 1,
    "search_index": 1
+  },
+  {
+   "fieldname": "section_break_cxqt",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "add_ons",
+   "fieldtype": "Table",
+   "label": "Add Ons",
+   "options": "Airplane Ticket Add-on Item"
+  },
+  {
+   "fieldname": "column_break_cxez",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_lmfx",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "flight_price",
+   "fieldtype": "Currency",
+   "label": "Flight Price",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_fqyx",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "total_amount",
+   "fieldtype": "Currency",
+   "label": "Total Amount",
+   "read_only": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2024-09-03 11:10:56.043504",
+ "modified": "2024-09-03 16:59:18.082518",
  "modified_by": "Administrator",
  "module": "Airplane Mode",
  "name": "Airplane Ticket",
