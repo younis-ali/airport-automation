@@ -18,7 +18,8 @@
   "departure_time",
   "duration_of_flight",
   "column_break_yyzv",
-  "status"
+  "status",
+  "amended_from"
  ],
  "fields": [
   {
@@ -107,11 +108,22 @@
    "label": "Status",
    "options": "Booked\nChecked-In\nBoarded",
    "reqd": 1
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Airplane Ticket",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
   }
  ],
  "index_web_pages_for_search": 1,
+ "is_submittable": 1,
  "links": [],
- "modified": "2024-09-03 09:54:33.210528",
+ "modified": "2024-09-03 11:10:56.043504",
  "modified_by": "Administrator",
  "module": "Airplane Mode",
  "name": "Airplane Ticket",
