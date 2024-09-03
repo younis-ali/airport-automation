@@ -16,7 +16,9 @@
   "departure_details_section",
   "departure_date",
   "departure_time",
-  "duration_of_flight"
+  "duration_of_flight",
+  "column_break_yyzv",
+  "status"
  ],
  "fields": [
   {
@@ -72,6 +74,8 @@
   {
    "fieldname": "departure_date",
    "fieldtype": "Date",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
    "label": "Departure Date",
    "reqd": 1
   },
@@ -91,11 +95,23 @@
    "fieldname": "departure_details_section",
    "fieldtype": "Section Break",
    "label": "Departure Details"
+  },
+  {
+   "fieldname": "column_break_yyzv",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "Booked",
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Status",
+   "options": "Booked\nChecked-In\nBoarded",
+   "reqd": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-09-02 20:46:01.868507",
+ "modified": "2024-09-03 09:54:33.210528",
  "modified_by": "Administrator",
  "module": "Airplane Mode",
  "name": "Airplane Ticket",
@@ -117,5 +133,19 @@
  ],
  "sort_field": "modified",
  "sort_order": "DESC",
- "states": []
+ "states": [
+  {
+   "color": "Gray",
+   "title": "Booked"
+  },
+  {
+   "color": "Purple",
+   "title": "Checked-In"
+  },
+  {
+   "color": "Green",
+   "title": "Boarded"
+  }
+ ],
+ "track_changes": 1
 }
