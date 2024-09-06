@@ -1,56 +1,130 @@
 {
  "actions": [],
+ "allow_guest_to_view": 1,
  "allow_rename": 1,
  "autoname": "format:{airplane}-{MM}-{YYYY}",
- "creation": "2024-09-04 12:05:07.218321",
+ "creation": "2024-09-06 12:08:52.332894",
+ "default_view": "List",
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
-  "section_break_7ueu",
-  "amended_from",
+  "airline_details_section",
   "airplane",
-  "column_break_eujc",
+  "published",
+  "route",
+  "column_break_kyjq",
   "status",
+  "amended_from",
   "airport_details_section",
   "source_airport",
   "source_airport_code",
-  "column_break_apdl",
+  "column_break_zoxt",
   "destination_airport",
   "destination_airport_code",
   "departure_details_section",
   "date_of_departure",
   "duration",
-  "column_break_ghow",
+  "column_break_tkwj",
   "time_of_departure"
  ],
  "fields": [
   {
-   "fieldname": "section_break_7ueu",
-   "fieldtype": "Section Break"
+   "fieldname": "airline_details_section",
+   "fieldtype": "Section Break",
+   "label": "Airline Details"
   },
   {
-   "fieldname": "amended_from",
-   "fieldtype": "Link",
-   "label": "Amended From",
-   "no_copy": 1,
-   "options": "Airplane Flight",
-   "print_hide": 1,
-   "read_only": 1,
-   "search_index": 1
+   "default": "0",
+   "fieldname": "published",
+   "fieldtype": "Check",
+   "label": "Published"
+  },
+  {
+   "fieldname": "route",
+   "fieldtype": "Data",
+   "label": "Route"
   },
   {
    "fieldname": "airplane",
    "fieldtype": "Link",
    "in_list_view": 1,
    "label": "Airplane",
+   "non_negative": 1,
    "options": "Airplane",
    "reqd": 1
+  },
+  {
+   "fieldname": "column_break_kyjq",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "Scheduled",
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Status",
+   "options": "Scheduled\nCompleted\nCancelled"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Flights",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  },
+  {
+   "fieldname": "airport_details_section",
+   "fieldtype": "Section Break",
+   "label": "Airport Details"
+  },
+  {
+   "fieldname": "source_airport",
+   "fieldtype": "Link",
+   "label": "Source Airport",
+   "options": "Airport",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_zoxt",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "destination_airport",
+   "fieldtype": "Link",
+   "label": "Destination Airport",
+   "options": "Airport",
+   "reqd": 1
+  },
+  {
+   "fetch_from": "source_airport.code",
+   "fieldname": "source_airport_code",
+   "fieldtype": "Data",
+   "label": "Source Airport Code",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "destination_airport.code",
+   "fieldname": "destination_airport_code",
+   "fieldtype": "Data",
+   "label": "Destination Airport Code",
+   "read_only": 1
+  },
+  {
+   "fieldname": "departure_details_section",
+   "fieldtype": "Section Break",
+   "label": "Departure Details"
   },
   {
    "fieldname": "date_of_departure",
    "fieldtype": "Date",
    "label": "Date of Departure",
    "reqd": 1
+  },
+  {
+   "fieldname": "column_break_tkwj",
+   "fieldtype": "Column Break"
   },
   {
    "fieldname": "time_of_departure",
@@ -63,67 +137,11 @@
    "fieldtype": "Duration",
    "label": "Duration",
    "reqd": 1
-  },
-  {
-   "default": "Scheduled",
-   "fieldname": "status",
-   "fieldtype": "Select",
-   "label": "Status",
-   "options": "Scheduled\nCompleted\nCancelled"
-  },
-  {
-   "fetch_from": "airplane.airline",
-   "fieldname": "source_airport",
-   "fieldtype": "Link",
-   "label": "Source Airport",
-   "options": "Airport",
-   "reqd": 1
-  },
-  {
-   "fetch_from": "source_airport.code",
-   "fieldname": "source_airport_code",
-   "fieldtype": "Data",
-   "label": "Source Airport Code",
-   "read_only": 1
-  },
-  {
-   "fieldname": "destination_airport",
-   "fieldtype": "Link",
-   "label": "Destination Airport",
-   "options": "Airport",
-   "reqd": 1
-  },
-  {
-   "fetch_from": "destination_airport.code",
-   "fieldname": "destination_airport_code",
-   "fieldtype": "Data",
-   "label": "Destination Airport Code",
-   "read_only": 1
-  },
-  {
-   "fieldname": "column_break_eujc",
-   "fieldtype": "Column Break"
-  },
-  {
-   "fieldname": "airport_details_section",
-   "fieldtype": "Section Break",
-   "label": "Airport Details"
-  },
-  {
-   "fieldname": "column_break_apdl",
-   "fieldtype": "Column Break"
-  },
-  {
-   "fieldname": "departure_details_section",
-   "fieldtype": "Section Break",
-   "label": "Departure Details"
-  },
-  {
-   "fieldname": "column_break_ghow",
-   "fieldtype": "Column Break"
   }
  ],
+ "has_web_view": 1,
  "index_web_pages_for_search": 1,
+ "is_published_field": "published",
  "is_submittable": 1,
  "links": [
   {
@@ -131,10 +149,10 @@
    "link_fieldname": "flight"
   }
  ],
- "modified": "2024-09-04 14:58:18.310523",
+ "modified": "2024-09-06 12:25:24.387714",
  "modified_by": "Administrator",
  "module": "Airplane Mode",
- "name": "Airplane Flight",
+ "name": "Flights",
  "naming_rule": "Expression",
  "owner": "Administrator",
  "permissions": [
@@ -151,6 +169,7 @@
    "write": 1
   }
  ],
+ "route": "flights",
  "sort_field": "modified",
  "sort_order": "DESC",
  "states": []

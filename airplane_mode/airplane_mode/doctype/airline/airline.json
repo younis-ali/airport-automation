@@ -1,5 +1,6 @@
 {
  "actions": [],
+ "allow_guest_to_view": 1,
  "allow_rename": 1,
  "autoname": "prompt",
  "creation": "2024-09-02 19:46:52.864816",
@@ -9,7 +10,9 @@
   "airline_details_section",
   "founding_year",
   "customer_care_number",
-  "headquarters"
+  "headquarters",
+  "published",
+  "route"
  ],
  "fields": [
   {
@@ -36,16 +39,29 @@
    "in_list_view": 1,
    "label": "Headquarters",
    "reqd": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "published",
+   "fieldtype": "Check",
+   "label": "Published"
+  },
+  {
+   "fieldname": "route",
+   "fieldtype": "Data",
+   "label": "Route"
   }
  ],
+ "has_web_view": 1,
  "index_web_pages_for_search": 1,
+ "is_published_field": "published",
  "links": [
   {
    "link_doctype": "Airplane",
    "link_fieldname": "airline"
   }
  ],
- "modified": "2024-09-03 10:34:01.281062",
+ "modified": "2024-09-05 21:25:43.576096",
  "modified_by": "Administrator",
  "module": "Airplane Mode",
  "name": "Airline",
@@ -65,6 +81,7 @@
    "write": 1
   }
  ],
+ "route": "airlines",
  "sort_field": "modified",
  "sort_order": "DESC",
  "states": []
