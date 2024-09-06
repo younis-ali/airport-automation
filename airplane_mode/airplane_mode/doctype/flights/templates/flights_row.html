@@ -1,4 +1,78 @@
-<div>
-	<a href="{{ doc.route }}">{{ doc.title or doc.name }}</a>
+<style>
+    .flight-card {
+        border: 1px solid #e0e0e0;
+        border-radius: 12px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+        padding: 20px;
+        background-color: white;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .flight-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+    }
+
+    .flight-card .card-body {
+        padding: 15px;
+        text-align: left;
+    }
+
+    .flight-card .card-title {
+        font-size: 22px;
+        font-weight: bold;
+        color: #2c3e50;
+        margin-bottom: 15px;
+    }
+
+    .flight-card .card-text {
+        font-size: 16px;
+        color: #7f8c8d;
+        margin-bottom: 10px;
+    }
+
+    .flight-card .card-text span {
+        color: #2980b9;
+        font-weight: 500;
+    }
+
+    .flight-card .card-link {
+        display: inline-block;
+        padding: 10px 20px;
+        background-color: #3498db;
+        color: white;
+        font-size: 14px;
+        font-weight: bold;
+        border-radius: 8px;
+        text-decoration: none;
+        transition: background-color 0.3s ease, transform 0.3s ease;
+    }
+
+    .flight-card .card-link:hover {
+        background-color: #2980b9;
+        transform: translateY(-2px);
+    }
+
+    .flight-card .card-icon {
+        font-size: 48px;
+        color: #2980b9;
+        margin-bottom: 10px;
+    }
+
+    .flight-card.mb-3 {
+        margin-bottom: 2rem;
+    }
+</style>
+
+<div class="card flight-card mb-3">
+    <div class="card-body">
+        <i class="fas fa-plane-departure card-icon"></i>
+        <h4 class="card-title">{{ doc.title or doc.name }}</h4>
+        <p class="card-text">
+            <span>{{ doc.source_airport_code }}</span> → 
+            <span>{{ doc.destination_airport_code }}</span>
+        </p>
+        <p class="card-text">{{ doc.date_of_departure }} | {{ doc.time_of_departure }} | {{ doc.duration }}</p>
+        <a href="{{ doc.route }}" class="card-link">View Flight</a>
+    </div>
 </div>
-<!-- this is a sample default list template -->
