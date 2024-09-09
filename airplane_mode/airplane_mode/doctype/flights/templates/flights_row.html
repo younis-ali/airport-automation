@@ -73,15 +73,11 @@
             <span>{{ doc.destination_airport_code }}</span>
         </p>
 
-        {# Format the date as 06 Sep, 2024 #}
         <p class="card-text">
-            {{ doc.date_of_departure.strftime('%d %b, %Y') }} | 
+            {{ frappe.utils.format_date(doc.date_of_departure, "d MMMM, YYYY") }} | 
             {{ doc.time_of_departure }} | 
             
-            {# Format the duration to 'Xhr Ymin' without decimals #}
-            {% set hours = (doc.duration // 60) | int %}
-            {% set minutes = (doc.duration % 60) | int %}
-            {{ hours }}hr {{ minutes }}min
+            {{ frappe.utils.format_duration(doc.duration) }} 
         </p>
         
         <a href="{{ doc.route }}" class="card-link">View Flight</a>

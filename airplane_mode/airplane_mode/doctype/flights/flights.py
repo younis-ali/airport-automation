@@ -6,4 +6,8 @@ from frappe.website.website_generator import WebsiteGenerator
 
 
 class Flights(WebsiteGenerator):
-	pass
+	def on_submit(self):
+		self.status='Completed'
+	
+	def on_cancle(self):
+		self.status='Cancelled'

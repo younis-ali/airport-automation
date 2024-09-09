@@ -2,11 +2,16 @@
 
 {% block page_content %}
 <h1>{{ title }}</h1>
-
-<div class="flight-list">
-    {% for doc in flights %}
-        {% include 'flights_row.html' %}
-    {% endfor %}
-</div>
-
+<h3> Flight Details </h3>
+<ul>
+    <li>Airline: {{ doc.airplane }}</li>
+    <li>{{ doc.source_airport_code }} → {{ doc.destination_airport_code }}</li>
+    <li>
+        {{ frappe.utils.format_date(doc.date_of_departure, "YYYY-MM-dd") }} | 
+        {{ doc.time_of_departure }} 
+    </li>
+    <li>Duration : {{ frappe.utils.format_duration(doc.duration) }} 
+    </li>
+</ul>
+<a href="/book-flight-ticket/new?Flight={{ title }}" class="btn btn-primary">Book Flight</a>
 {% endblock %}

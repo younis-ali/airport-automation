@@ -1,0 +1,31 @@
+{
+ "attach_print": 0,
+ "channel": "System Notification",
+ "condition": "doc.status == 'Scheduled'",
+ "creation": "2024-09-09 15:07:04.392417",
+ "date_changed": "date_of_departure",
+ "days_in_advance": 1,
+ "docstatus": 0,
+ "doctype": "Notification",
+ "document_type": "Flights",
+ "enabled": 1,
+ "event": "Days Before",
+ "idx": 0,
+ "is_standard": 1,
+ "message": "The flight {{ doc.title }} departs in 24 hours!\nDate of Departure: {{ doc.date_of_departure }}\nDuration: {{ doc.duration }}\nPlease ensure all arrangements are made.\n",
+ "message_type": "HTML",
+ "modified": "2024-09-09 15:07:26.000259",
+ "modified_by": "Administrator",
+ "module": "Airplane Mode",
+ "name": "Flight Notifiaction",
+ "owner": "Administrator",
+ "recipients": [
+  {
+   "receiver_by_document_field": "owner",
+   "receiver_by_role": "System Manager"
+  }
+ ],
+ "send_system_notification": 0,
+ "send_to_all_assignees": 0,
+ "subject": "Departs in 24 hours!"
+}
