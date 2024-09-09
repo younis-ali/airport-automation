@@ -11,8 +11,6 @@
     </style>
 </head>
 <body>
-    <h1>Color: {{ color }}</h1>
-    <div class="rectangle" style="background-color: {{ color or 'black' }};"></div>
+    <div class="rectangle" style="background-color: {{ frappe.form_dict.color or 'black' }};"></div>
 </body>
 </html>
-
