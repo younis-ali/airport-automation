@@ -1,0 +1,27 @@
+{
+ "add_total_row": 0,
+ "columns": [],
+ "creation": "2024-09-10 13:24:35.905341",
+ "disabled": 0,
+ "docstatus": 0,
+ "doctype": "Report",
+ "filters": [],
+ "idx": 0,
+ "is_standard": "Yes",
+ "json": "{}",
+ "letterhead": null,
+ "modified": "2024-09-10 13:29:49.048944",
+ "modified_by": "Administrator",
+ "module": "Airplane Mode",
+ "name": "Airplanes By Airline",
+ "owner": "Administrator",
+ "prepared_report": 0,
+ "ref_doctype": "Airplane",
+ "report_name": "Airplanes By Airline",
+ "report_type": "Report Builder",
+ "roles": [
+  {
+   "role": "System Manager"
+  }
+ ]
+}

@@ -1,5 +1,6 @@
 {
  "actions": [],
+ "allow_guest_to_view": 1,
  "allow_rename": 1,
  "autoname": "format:{airline}-{model}",
  "creation": "2024-09-02 19:58:22.793228",
@@ -8,9 +9,11 @@
  "engine": "InnoDB",
  "field_order": [
   "airplane_details_section",
-  "model",
   "airline",
-  "capacity"
+  "capacity",
+  "published",
+  "column_break_pybf",
+  "model"
  ],
  "fields": [
   {
@@ -38,11 +41,22 @@
    "label": "Capacity",
    "non_negative": 1,
    "reqd": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "published",
+   "fieldtype": "Check",
+   "hidden": 1,
+   "label": "Published"
+  },
+  {
+   "fieldname": "column_break_pybf",
+   "fieldtype": "Column Break"
   }
  ],
- "index_web_pages_for_search": 1,
+ "is_published_field": "published",
  "links": [],
- "modified": "2024-09-04 14:23:49.176278",
+ "modified": "2024-09-10 12:02:53.174833",
  "modified_by": "Administrator",
  "module": "Airplane Mode",
  "name": "Airplane",

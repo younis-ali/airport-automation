@@ -52,7 +52,7 @@ class AirplaneTicket(Document):
 				f"You can't have one add-on more then once. Removing: {', '.join(removed_add_ons)}",
 				alert=True
 			)
-	
+		
 	# implement the before_submit controller hook
 
 	def before_submit(self):
@@ -62,14 +62,17 @@ class AirplaneTicket(Document):
 	# implement the controller hook to set the seat
 
 	def before_insert(self):
+
+		# Randomly assign the seat
 		random_int = random.randint(1,99)
 		random_char = random.choice('ABCDE')
 		self.seat = f"{random_int}{random_char}"
 
-# bench --site frappe.fullstack execute airplane_mode.airplane_mode.doctype.airplane_ticket.airplane_ticket.test
-def test():
-	obj = frappe.get_doc({
-		'doctype': 'Airplane Ticket',
-	})
-
-	obj.before_save()
+		# Perform the validation in airline capacitty
+		flight = self.flight
+		airplane = frappe.get_doc("Flights", flight).airplane
+		capacity = frappe.get_doc("Airplane", airplane).capacity
+		total_tickets = frappe.db.count('Airplane Ticket', filters={'flight': flight})
+		
+		if total_tickets > capacity:
+			frappe.throw(f"The number of tickets for {airplane} exceeds the airplane's capacity: {capacity}.")

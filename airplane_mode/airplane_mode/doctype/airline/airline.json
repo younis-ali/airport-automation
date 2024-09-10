@@ -8,11 +8,12 @@
  "engine": "InnoDB",
  "field_order": [
   "airline_details_section",
-  "founding_year",
-  "customer_care_number",
   "headquarters",
+  "founding_year",
   "published",
-  "route"
+  "column_break_tfwj",
+  "customer_care_number",
+  "website"
  ],
  "fields": [
   {
@@ -44,16 +45,20 @@
    "default": "0",
    "fieldname": "published",
    "fieldtype": "Check",
+   "hidden": 1,
    "label": "Published"
   },
   {
-   "fieldname": "route",
+   "fieldname": "column_break_tfwj",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "website",
    "fieldtype": "Data",
-   "label": "Route"
+   "label": "Website",
+   "options": "URL"
   }
  ],
- "has_web_view": 1,
- "index_web_pages_for_search": 1,
  "is_published_field": "published",
  "links": [
   {
@@ -61,7 +66,7 @@
    "link_fieldname": "airline"
   }
  ],
- "modified": "2024-09-05 21:25:43.576096",
+ "modified": "2024-09-10 11:23:40.206945",
  "modified_by": "Administrator",
  "module": "Airplane Mode",
  "name": "Airline",
@@ -81,7 +86,6 @@
    "write": 1
   }
  ],
- "route": "airlines",
  "sort_field": "modified",
  "sort_order": "DESC",
  "states": []
