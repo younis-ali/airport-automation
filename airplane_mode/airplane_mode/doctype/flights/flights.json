@@ -21,6 +21,8 @@
   "column_break_zoxt",
   "destination_airport",
   "destination_airport_code",
+  "crew_members_section",
+  "crew_members",
   "departure_details_section",
   "date_of_departure",
   "duration",
@@ -137,6 +139,17 @@
    "fieldtype": "Duration",
    "label": "Duration",
    "reqd": 1
+  },
+  {
+   "fieldname": "crew_members_section",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "crew_members",
+   "fieldtype": "Table",
+   "label": "Crew Members",
+   "options": "Flight Crew Member",
+   "reqd": 1
   }
  ],
  "has_web_view": 1,
@@ -149,7 +162,7 @@
    "link_fieldname": "flight"
   }
  ],
- "modified": "2024-09-10 16:28:20.675397",
+ "modified": "2024-09-13 17:58:39.178028",
  "modified_by": "Administrator",
  "module": "Airplane Mode",
  "name": "Flights",
