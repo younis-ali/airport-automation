@@ -14,6 +14,7 @@
   "flight",
   "destination_airport_code",
   "seat",
+  "gate_number",
   "amended_from",
   "section_break_cxqt",
   "add_ons",
@@ -151,12 +152,17 @@
   {
    "fieldname": "column_break_clbe",
    "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "gate_number",
+   "fieldtype": "Data",
+   "label": "Gate Number"
   }
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2024-09-10 16:30:33.214205",
+ "modified": "2024-09-24 13:38:38.698710",
  "modified_by": "Administrator",
  "module": "Airplane Mode",
  "name": "Airplane Ticket",
