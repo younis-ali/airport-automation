@@ -2,10 +2,10 @@
 # For license information, please see license.txt
 
 import frappe
-from frappe.model.document import Document
+from frappe.website.website_generator import WebsiteGenerator
 from frappe import _
 
-class Shop(Document):
+class Shop(WebsiteGenerator):
 	def before_save(self):
 		# Check if the status is being changed to 'Available'
 		if self.status == "Available":

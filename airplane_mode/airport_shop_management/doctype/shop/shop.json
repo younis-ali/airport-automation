@@ -1,5 +1,6 @@
 {
  "actions": [],
+ "allow_guest_to_view": 1,
  "allow_rename": 1,
  "autoname": "format:{shop_number}",
  "creation": "2024-09-24 14:27:58.606814",
@@ -14,6 +15,8 @@
   "airport",
   "status",
   "monthly_rent",
+  "route",
+  "publish",
   "section_break_fqvh",
   "tenant_details",
   "column_break_arba",
@@ -102,12 +105,25 @@
    "fieldtype": "Select",
    "label": "Type",
    "options": "Food\nOnly Veg\nGrocery\nTechnology\nOther"
+  },
+  {
+   "fieldname": "route",
+   "fieldtype": "Data",
+   "label": "Route"
+  },
+  {
+   "default": "0",
+   "fieldname": "publish",
+   "fieldtype": "Check",
+   "label": "Publish"
   }
  ],
+ "has_web_view": 1,
  "image_field": "shop_image",
  "index_web_pages_for_search": 1,
+ "is_published_field": "publish",
  "links": [],
- "modified": "2024-10-11 16:46:33.511608",
+ "modified": "2024-10-11 17:34:47.397214",
  "modified_by": "Administrator",
  "module": "Airport Shop Management",
  "name": "Shop",
@@ -127,6 +143,7 @@
    "write": 1
   }
  ],
+ "route": "shops",
  "show_title_field_in_link": 1,
  "sort_field": "modified",
  "sort_order": "DESC",
