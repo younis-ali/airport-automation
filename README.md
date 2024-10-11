@@ -91,4 +91,4 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 
 ## Contributors
 
-- Your Name (lone.younis1993@gmail.com)
+- Younis (lone.younis1993@gmail.com)
