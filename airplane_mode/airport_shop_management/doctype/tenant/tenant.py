@@ -3,11 +3,13 @@
 
 import frappe
 from frappe.model.document import Document
-from frappe.utils import validate_email_address
+from frappe.utils import validate_email_address, getdate
 
 
 class Tenant(Document):
 	def validate(self):
+
+		# Validate email
 		if self.email:
 			if not validate_email_address(self.email):
 				frappe.throw(f"Invalid email address : {self.email}")

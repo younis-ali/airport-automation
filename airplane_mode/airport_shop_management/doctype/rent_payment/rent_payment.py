@@ -6,6 +6,7 @@ from frappe.model.document import Document
 
 
 class RentPayment(Document):
-	def before_insert(self):
+	def on_submit(self):
 		# Automatically generate a unique receipt number before inserting
+		self.status='Paid'
 		self.receipt_number = frappe.generate_hash(self.name, 10)

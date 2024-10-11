@@ -27,7 +27,8 @@
   "date_of_departure",
   "duration",
   "column_break_tkwj",
-  "time_of_departure"
+  "time_of_departure",
+  "gate_number"
  ],
  "fields": [
   {
@@ -150,6 +151,11 @@
    "label": "Crew Members",
    "options": "Flight Crew Member",
    "reqd": 1
+  },
+  {
+   "fieldname": "gate_number",
+   "fieldtype": "Data",
+   "label": "Gate Number"
   }
  ],
  "has_web_view": 1,
@@ -162,7 +168,7 @@
    "link_fieldname": "flight"
   }
  ],
- "modified": "2024-09-13 17:58:39.178028",
+ "modified": "2024-10-10 16:36:44.573934",
  "modified_by": "Administrator",
  "module": "Airplane Mode",
  "name": "Flights",

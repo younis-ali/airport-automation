@@ -14,7 +14,6 @@
   "flight",
   "destination_airport_code",
   "seat",
-  "gate_number",
   "amended_from",
   "section_break_cxqt",
   "add_ons",
@@ -25,8 +24,10 @@
   "departure_details_section",
   "departure_date",
   "departure_time",
+  "gate_number",
   "column_break_clbe",
-  "duration_of_flight"
+  "duration_of_flight",
+  "is_group"
  ],
  "fields": [
   {
@@ -128,6 +129,7 @@
    "fetch_from": "flight.source_airport_code",
    "fieldname": "source_airport_code",
    "fieldtype": "Data",
+   "in_list_view": 1,
    "label": "Source Airport Code",
    "read_only": 1
   },
@@ -135,6 +137,7 @@
    "fetch_from": "flight.destination_airport_code",
    "fieldname": "destination_airport_code",
    "fieldtype": "Data",
+   "in_list_view": 1,
    "label": "Destination Airport Code",
    "read_only": 1
   },
@@ -154,19 +157,27 @@
    "fieldtype": "Column Break"
   },
   {
+   "fetch_from": "flight.gate_number",
    "fieldname": "gate_number",
    "fieldtype": "Data",
    "label": "Gate Number"
+  },
+  {
+   "default": "0",
+   "fieldname": "is_group",
+   "fieldtype": "Check",
+   "label": "Is Group"
   }
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2024-09-24 13:38:38.698710",
+ "modified": "2024-10-10 16:50:05.367744",
  "modified_by": "Administrator",
  "module": "Airplane Mode",
  "name": "Airplane Ticket",
  "naming_rule": "Expression",
+ "nsm_parent_field": "parent_airplane_ticket",
  "owner": "Administrator",
  "permissions": [
   {

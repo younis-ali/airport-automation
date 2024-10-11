@@ -6,28 +6,22 @@
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
-  "shop_number",
+  "shop_code",
   "shop_name",
   "area",
+  "type",
   "column_break_nyiy",
   "airport",
-  "tenant",
   "status",
-  "rent_details_section",
-  "rent_amount",
   "monthly_rent",
-  "column_break_fscf",
-  "lease_start_date",
-  "lease_expiry_date"
+  "section_break_fqvh",
+  "tenant_details",
+  "column_break_arba",
+  "contract_expiry",
+  "section_break_tssp",
+  "shop_image"
  ],
  "fields": [
-  {
-   "fieldname": "shop_number",
-   "fieldtype": "Data",
-   "in_list_view": 1,
-   "label": "Shop Number",
-   "reqd": 1
-  },
   {
    "fieldname": "column_break_nyiy",
    "fieldtype": "Column Break"
@@ -35,6 +29,8 @@
   {
    "fieldname": "shop_name",
    "fieldtype": "Data",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
    "label": "Shop Name",
    "reqd": 1
   },
@@ -51,57 +47,67 @@
    "reqd": 1
   },
   {
-   "fieldname": "tenant",
-   "fieldtype": "Link",
-   "label": "Tenant",
-   "options": "Tenant",
-   "reqd": 1
-  },
-  {
-   "fieldname": "rent_details_section",
-   "fieldtype": "Section Break",
-   "label": "Rent Details"
-  },
-  {
-   "fieldname": "rent_amount",
-   "fieldtype": "Currency",
-   "label": "Rent Amount",
-   "reqd": 1
-  },
-  {
-   "fieldname": "monthly_rent",
-   "fieldtype": "Float",
-   "hidden": 1,
-   "label": "Monthly Rent"
-  },
-  {
-   "fieldname": "column_break_fscf",
-   "fieldtype": "Column Break"
-  },
-  {
-   "fieldname": "lease_start_date",
-   "fieldtype": "Date",
-   "label": "Lease Start Date",
-   "reqd": 1
-  },
-  {
-   "fieldname": "lease_expiry_date",
-   "fieldtype": "Date",
-   "label": "Lease Expiry Date",
-   "reqd": 1
-  },
-  {
    "default": "Available",
    "fieldname": "status",
    "fieldtype": "Select",
    "label": "Status",
    "options": "Available\nLeased",
    "reqd": 1
+  },
+  {
+   "fieldname": "section_break_tssp",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "shop_image",
+   "fieldtype": "Attach Image",
+   "label": "Shop Image"
+  },
+  {
+   "fieldname": "monthly_rent",
+   "fieldtype": "Currency",
+   "label": "Monthly Rent",
+   "reqd": 1
+  },
+  {
+   "fieldname": "section_break_fqvh",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_arba",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "tenant_details",
+   "fieldtype": "Link",
+   "label": "Tenant Details",
+   "options": "Tenant",
+   "read_only": 1
+  },
+  {
+   "fieldname": "contract_expiry",
+   "fieldtype": "Date",
+   "label": "Contract Expiry",
+   "read_only": 1
+  },
+  {
+   "fieldname": "shop_code",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Shop Code",
+   "reqd": 1
+  },
+  {
+   "fieldname": "type",
+   "fieldtype": "Select",
+   "label": "Type",
+   "options": "Food\nOnly Veg\nGrocery\nTechnology\nOther"
   }
  ],
+ "image_field": "shop_image",
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-09-24 16:05:44.364954",
+ "modified": "2024-10-11 16:46:33.511608",
  "modified_by": "Administrator",
  "module": "Airport Shop Management",
  "name": "Shop",
@@ -121,7 +127,9 @@
    "write": 1
   }
  ],
+ "show_title_field_in_link": 1,
  "sort_field": "modified",
  "sort_order": "DESC",
- "states": []
+ "states": [],
+ "title_field": "shop_name"
 }
