@@ -1,91 +1,94 @@
-# Airplane Mode App
+
+# Airport Management System
 
 ## Overview
 
-The **Airplane Mode** app is a Frappe-based custom application designed to manage flight ticket systems. The app includes functionalities for managing airlines, airplanes, airports, flights, and passengers. Additionally, it supports features like booking, add-ons, and document states.
+The **Airport Management System** is a frappe application built on the Frappe Framework designed to manage various aspects of an airport's operations, including **Flight and Ticket Management** and **Shop/Tenant Management**. This system streamlines the process of tracking flights, managing flights, tracking shops and tenants, and handling rent payments in a seamless and automated manner.
 
-## DocTypes
+---
 
-### 1. Airline
+## Features
 
-- **Fields:**
-  - Founding Year (Int, Non-negative)
-  - Customer Care Number (Data, Mandatory)
-  - Headquarters (Data, Mandatory)
+### 1. **Flight and Ticket Management**
 
-### 2. Airplane
+- **Flight Passenger Management**:
+  - Create and manage passengers with details like first name, last name, and date of birth.
+    
+- **Airplane Ticket Management**:
+  - Link passengers to tickets with detailed information such as source and destination airports, flight details, departure date and time, and duration of the flight.
+  - Fetch source and destination airport codes automatically.
+  - Track the status of tickets (Booked, Checked-In, Boarded) with color-coded indicators.
 
-- **Fields:**
-  - Model (Data, Mandatory)
-  - Airline (Link to Airline DocType, Mandatory)
-  - Capacity (Int, Non-negative, Mandatory)
+### 2. **Shop and Tenant Management**
 
-### 3. Airport
+- **Shop Management**:
+  - Track shops in an airport with details like shop number, name, physical properties (area), and availability status.
+  - Link shops to tenants and monitor the status of the shop (available, leased, etc.).
 
-- **Fields:**
-  - Code (Data, Mandatory)
-  - City (Data, Mandatory)
-  - Country (Data, Mandatory)
+- **Tenant Management**:
+  - Store tenant information, including contact details (name, email), and contract details (rent amount, contract start and end dates).
+  - Validate tenant email and ensure contract end date is at least one year after the start date.
 
-### 4. Flight Passenger
+- **Rent Payment Tracking**:
+  - Track rent payments on a monthly basis for each shop and issue rent receipts.
+  - Generate rent receipts using Frappe's Print Designer.
+  - Send automated monthly rent reminders to tenants via email using scheduled events.
+    
+---
 
-- **Fields:**
-  - First Name (Data, Mandatory)
-  - Last Name (Data)
-  - Date Of Birth (Date, Mandatory)
+## Installation
 
-- **Controller Logic:**
-  - Full Name field is auto-set based on First Name and Last Name.
-  - Title field is set to Full Name.
+1. **Clone the repository**:
+   ```bash
+   git clone https://github.com/your-repo/airport-automation.git
+   ```
 
-### 5. Airplane Ticket
+2. **Set up Frappe and Bench**:
+   Follow Frappe's official documentation to install Bench and Frappe framework:
+   - https://frappeframework.com/docs/v15.x/user/en/installation
 
-- **Fields:**
-  - Passenger (Link to Flight Passenger, Mandatory)
-  - Source Airport (Link to Airport, Mandatory)
-  - Destination Airport (Link to Airport, Mandatory)
-  - Source Airport Code (Fetched, Read-only, Mandatory)
-  - Destination Airport Code (Fetched, Read-only, Mandatory)
-  - Flight (Link to Airplane Flight, Mandatory)
-  - Departure Date (Date, Mandatory)
-  - Departure Time (Time, Mandatory)
-  - Duration of Flight (Duration, Mandatory)
-  - Status (Select, Mandatory; Options: Booked, Checked-In, Boarded)
-  - Seat (Data, Read-only)
+3. **Install the app**:
+   ```bash
+   bench get-app airport-automation
+   bench new-site site_name
+   bench --site site_name install-app airport-automation
+   ```
 
-- **Controller Logic:**
-  - Auto-generate Seat field value (e.g., 89E, 21A).
-  - Prevent submission unless status is 'Boarded'.
+4. **Run migrations**:
+   ```bash
+   bench --site site_name migrate
+   ```
 
-### 6. Airplane Flight
+---
 
-- **Fields:**
-  - Airplane (Link to Airplane DocType, Mandatory)
-  - Date of Departure (Date, Mandatory)
-  - Time of Departure (Time, Mandatory)
-  - Duration (Duration, Mandatory)
-  - Status (Select; Options: Scheduled, Completed, Cancelled)
+## Usage
 
-## Add-ons
+- **Flight and Ticket Management**: Add and manage flights, passengers, and tickets from the Desk.
+- **Shop Management**: Manage shops, tenants, and rent payments.
 
-### 1. Airplane Ticket Add-on Type
+---
+## Screen Shots
+Access flights and book tickets
+![image](https://github.com/user-attachments/assets/72f4fbc9-9af4-42c7-bcb7-ed83d0fa8782)
 
-- **Fields:**
-  - Description (Data)
+Reports
+![image](https://github.com/user-attachments/assets/452fa7cd-9736-4410-ad46-e490216c8e80)
 
-### 2. Airplane Ticket Add-on Item
+![image](https://github.com/user-attachments/assets/f2d5d409-6c5d-44ee-80ea-845d9c495361)
 
-- **Fields:**
-  - Item (Link to Airplane Ticket Add-on Type, Mandatory)
-  - Amount (Currency, default 0)
+Shops Web View
+![image](https://github.com/user-attachments/assets/a41f8f65-ea9e-48e8-b333-8b6eea81770b)
 
-- **Controller Logic:**
-  - Calculate the total amount for the ticket including add-ons.
-  - Ensure unique add-on items in the child table.
+Rent Payment Receipt with status
+![image](https://github.com/user-attachments/assets/6f61918e-f819-4863-8c3e-9b214a671b3d)
 
-## Workspace
 
-The app includes a custom workspace with shortcuts to manage Airlines, Passengers, and Airplanes.
-#### License
+## License
 
-mit
+This project is licensed under the MIT License - see the LICENSE file for details.
+
+---
+
+## Contributors
+
+- Your Name (lone.younis1993@gmail.com)
