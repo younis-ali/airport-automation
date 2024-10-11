@@ -18,6 +18,7 @@ The **Airport Management System** is a frappe application built on the Frappe Fr
   - Link passengers to tickets with detailed information such as source and destination airports, flight details, departure date and time, and duration of the flight.
   - Fetch source and destination airport codes automatically.
   - Track the status of tickets (Booked, Checked-In, Boarded) with color-coded indicators.
+  - Gate numbers are synced across Fligts and Tickets usng doc_event hook
 
 ### 2. **Shop and Tenant Management**
 
