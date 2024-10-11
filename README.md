@@ -33,7 +33,13 @@ The **Airport Management System** is a frappe application built on the Frappe Fr
   - Track rent payments on a monthly basis for each shop and issue rent receipts.
   - Generate rent receipts using Frappe's Print Designer.
   - Send automated monthly rent reminders to tenants via email using scheduled events.
-    
+
+### 3. **Some Reporting**
+  1. Shop availibility by ariport
+  2. Count shops on the basis of Airport
+  3. Count Airplanes by Airport
+  4. Compute Revenue by Airline
+  5. Show the popular Ad-ons
 ---
 
 ## Installation
